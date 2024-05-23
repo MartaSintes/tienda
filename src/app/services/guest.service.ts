@@ -10,7 +10,7 @@ export class GuestService {
   public url = GLOBAL.url;
 
   constructor(private _http: HttpClient) {}
-  
+
   createTCliente(data: any): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this._http.post(this.url + '/createTCliente', data, {
@@ -21,6 +21,12 @@ export class GuestService {
   logintCliente(data: any): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this._http.post(this.url + '/logintCliente', data, {
+      headers: headers,
+    });
+  }
+  getProductosShop(): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this._http.get(this.url + '/getProductosShop',{
       headers: headers,
     });
   }

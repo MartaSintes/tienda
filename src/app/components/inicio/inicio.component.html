@@ -1,37 +1,5 @@
 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>artLabKids - Home</title>
-  <!-- Bootstrap CSS -->
-
-</head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">ArtLabKids</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Productos</a>
-          <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/registro']" >Registro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Carousel -->
+ <app-topbar></app-topbar>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -71,30 +39,7 @@
     </a>
   </div>
 
-  <!-- Featured Products Section -->
-  
+  <app-footer></app-footer>
 
-  <!-- Additional Information Section -->
-  <div class="container mt-5 mb-5">
-    <h2 class="text-center">¿Por qué elegirnos?</h2>
-    <div class="row mt-4">
-      <div class="col-md-4 text-center">
-        <i class="fas fa-shipping-fast fa-3x mb-3"></i>
-        <h5>Envío Rápido</h5>
-        <p>Recibe tus productos en tiempo récord.</p>
-      </div>
-      <div class="col-md-4 text-center">
-        <i class="fas fa-undo-alt fa-3x mb-3"></i>
-        <h5>Devoluciones Fáciles</h5>
-        <p>Proceso de devolución sencillo y sin complicaciones.</p>
-      </div>
-      <div class="col-md-4 text-center">
-        <i class="fas fa-headset fa-3x mb-3"></i>
-        <h5>Atención al Cliente</h5>
-        <p>Estamos aquí para ayudarte en cualquier momento.</p>
-      </div>
-    </div>
-  </div> 
-</body>
-</html>
+
 
