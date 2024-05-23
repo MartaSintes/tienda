@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
-
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { routing } from './app.routing';
 
 
@@ -14,6 +14,8 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 
 @NgModule({
@@ -23,18 +25,19 @@ import { LoginComponent } from './components/login/login.component';
     TopbarComponent,
     RegisterComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    ShopComponent,
+    ProductoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    routing
+    routing,
+    NgbPaginationModule,
   ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideHttpClient(withFetch())],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

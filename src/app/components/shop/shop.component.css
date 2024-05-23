@@ -1,0 +1,5 @@
+.btn-custom {
+    width: 130px; /* Ancho más grande */
+    height: 50px; /* Altura para hacerlo cuadrado */
+    margin-top: 20px; /* Espacio adicional desde el texto anterior */
+  }
