@@ -1,1 +1,36 @@
-<p>producto works!</p>
+<app-topbar></app-topbar>
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Imagen Principal -->
+      <div class="col-md-6">
+
+        <!-- Carrusel de Imágenes -->
+        <div id="productCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let item of galeria; let idx = index" [ngClass]="{'active': idx === 0}">
+              <img [src]="url+'/getProductoPortada/'+item.imagen" class="d-block w-100" alt="Slide {{idx + 1}}">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Descripción del Producto -->
+      <div class="col-md-6">
+        <h2>{{producto.titulo}}</h2>
+        <p class="text-muted">{{producto.precio}}€</p>
+        <p>{{producto.descripcion}}</p>
+        <button class="btn btn-dark btn-lg" (click)="comprarProducto()">Comprar</button>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

@@ -22,8 +22,8 @@ export class ShopComponent {
   }
 
   init_productos() {
-     this.load_producto = true;
-    this._guestService.getProductosShop().subscribe((response) => {
+      this.load_producto = true;
+      this._guestService.getProductosShop().subscribe((response) => {
       this.productos = response.data;
       this.load_producto = false;
     });

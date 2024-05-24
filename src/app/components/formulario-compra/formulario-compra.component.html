@@ -1,0 +1,44 @@
+<app-topbar></app-topbar>
+
+<section class="py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <h2 class="text-center mb-4">Formulario de Compra</h2>
+        <form (ngSubmit)="submitOrden()">
+          <!-- Datos del usuario -->
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="cliente.nombres" name="nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control" id="apellido" [(ngModel)]="cliente.apellidos" name="apellido" required>
+          </div>
+          <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" class="form-control" id="direccion de entrega" [(ngModel)]="orden.direccion" name="direccion" required>
+          </div>
+          <!-- Datos del producto -->
+          <div class="form-group">
+            <label for="producto">Producto</label>
+            <input type="text" class="form-control" id="producto" [(ngModel)]="producto.titulo" name="producto" readonly>
+          </div>
+          <div class="form-group">
+            <label for="precio">Precio</label>
+            <input type="text" class="form-control" id="precio" [(ngModel)]="producto.precio" name="precio" readonly>
+          </div>
+          <h3>Método de pago</h3>
+          <div class="form-group">
+            <label for="tarjeta">Método de pago</label>
+            <input type="text" class="form-control" id="tarjeta" [(ngModel)]="orden.tarjeta" name="tarjeta" required>
+          </div>
+
+          <button type="submit" class="btn btn-dark btn-lg btn-block">Enviar Orden</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

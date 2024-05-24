@@ -13,21 +13,28 @@ export class GuestService {
 
   createTCliente(data: any): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this._http.post(this.url + '/createTCliente', data, {
+    return this._http.post(this.url + '/createCliente', data, {
       headers: headers,
     });
   }
 
   logintCliente(data: any): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this._http.post(this.url + '/logintCliente', data, {
+    return this._http.post(this.url + '/loginCliente', data, {
       headers: headers,
     });
   }
   getProductosShop(): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this._http.get(this.url + '/getProductosShop',{
+    return this._http.get(this.url + '/getProductosShop', {
       headers: headers,
     });
   }
+  getProductoShop(slug: any): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this._http.get(this.url + '/getProductoShop/' + slug, {
+      headers: headers,
+    });
+  }
+
 }
