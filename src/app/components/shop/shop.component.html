@@ -12,15 +12,17 @@
     <div class="container my-5">
       <div class="row">
         <div class="col-md-3 product-card" *ngFor="let item of productos| slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-          <div class="card">
+         
+         <div class="card">
+           <a [routerLink]="['/',item.slug]" >
             <img [src]="url+'/getImgProductos/'+item.portada" class="card-img-top" alt="Producto 1">
+            </a>
             <div class="card-body">
               <h5 class="card-title">{{item.titulo}}</h5>
-              <p class="card-text">{{item.descripcion}}</p>
               <p class="card-text"><strong>{{item.precio}}€</strong></p>
-              <a href="#" class="btn btn-dark">Comprar</a>
             </div>
           </div>
+
         </div>
       </div>
     </div>

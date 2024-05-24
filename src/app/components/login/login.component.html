@@ -37,6 +37,11 @@
                   ¿Olvidaste tu contraseña?
                 </a>
               </div>
+               <div class="col-12 col-md-auto text-center mb-2 ">
+                <a [routerLink]="['/registro']"  class="text-dark ">
+                  ¿Todavía no estás registrado?
+                </a>
+              </div>
               <button *ngIf="!btn_load" type="submit" class="btn btn-sm btn-dark w-100" type="button"
                 (click)="validate()">Iniciar sesión</button>
               <button *ngIf="btn_load" class="btn btn-sm btn-dark w-100" type="button" disabled>
