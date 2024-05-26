@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { FormularioCompraComponent } from './components/formulario-compra/formulario-compra.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'compra', component: FormularioCompraComponent },
+  { path: 'contacto', component: ContactoComponent },
   { path: ':slug', component: ProductoComponent },
 ];
 
