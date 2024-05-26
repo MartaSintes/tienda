@@ -1,0 +1,18 @@
+.carousel-item img {
+  max-width: 700px; 
+  max-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    color: #fff; /* Color del texto */
+    font-size: 1.5em; /* Tamaño de fuente */
+    padding: 10px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+    max-width: 700px; /* Ancho máximo igual al de la imagen */
+    margin-left: auto;
+    margin-right: auto;
+  }

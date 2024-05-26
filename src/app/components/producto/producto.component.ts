@@ -17,8 +17,6 @@ export class ProductoComponent {
   public variaciones: Array<any> = [];
   public galeria: Array<any> = [];
   public url = GLOBAL.url;
- 
- 
 
   constructor(
     private _route: ActivatedRoute,
@@ -43,10 +41,12 @@ export class ProductoComponent {
     });
   }
   comprarProducto() {
-     if (this._authService.checkLoggedIn()) {
-       this._router.navigate(['/compra'],{state: {producto: this.producto}});
-     } else {
-       this._router.navigate(['/login']);
-     }
+    if (this._authService.checkLoggedIn()) {
+      this._router.navigate(['/compra'], {
+        state: { producto: this.producto },
+      });
+    } else {
+      this._router.navigate(['/login']);
+    }
   }
 }
