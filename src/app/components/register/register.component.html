@@ -1,47 +1,37 @@
 <app-topbar></app-topbar>
 <section class="py-12 my-5">
-  <div class="container ">
-    <div class="row">
-      <div class="col-lg-5 col-sm-12 mx-auto">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-sm-12">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title text-center">Nuevo Usuario</h5>
             <form>
               <div class="form-group">
-                <input type="text" class="form-control form-control-sm" placeholder="Introduce tu nombre" name="nombres"
-                  [(ngModel)]="cliente.nombres">
+                <input type="text" class="form-control form-control-sm" placeholder="Introduce tu nombre" name="nombres" [(ngModel)]="cliente.nombres">
               </div>
               <div class="form-group">
-
-                <input type="text" class="form-control form-control-sm" placeholder="Introduce tus apellidos"
-                  name="apellidos" [(ngModel)]="cliente.apellidos">
+                <input type="text" class="form-control form-control-sm" placeholder="Introduce tus apellidos" name="apellidos" [(ngModel)]="cliente.apellidos">
               </div>
               <div class="form-group">
-
-                <input type="email" class="form-control form-control-sm" placeholder="Introduce tu email" name="email"
-                  [(ngModel)]="cliente.email">
+                <input type="email" class="form-control form-control-sm" placeholder="Introduce tu email" name="email" [(ngModel)]="cliente.email">
               </div>
               <div class="form-row">
                 <div class="form-group col">
-
-                  <input type="password" class="form-control form-control-sm" placeholder="Introduce tu contraseña"
-                    name="password" [(ngModel)]="cliente.password">
+                  <input type="password" class="form-control form-control-sm" placeholder="Introduce tu contraseña" name="password" [(ngModel)]="cliente.password">
                 </div>
                 <div class="form-group col">
-
-                  <input type="password" class="form-control form-control-sm" placeholder="Confirma tu contraseña"
-                    name="password_confirm" [(ngModel)]="cliente.password_confirm">
+                  <input type="password" class="form-control form-control-sm" placeholder="Confirma tu contraseña" name="password_confirm" [(ngModel)]="cliente.password_confirm">
                 </div>
               </div>
-              <div class="col-12 col-md-auto text-center mb-2">
-                <span *ngIf="msm_error" class="text-danger ">
+              <div class="col-12 text-center mb-2">
+                <span *ngIf="msm_error" class="text-danger">
                   {{msm_error}}
                 </span>
               </div>
-              <button *ngIf="!btn_load" type="submit" class="btn btn-sm btn-dark w-100" type="button"
-                (click)="validate()">Registrarse</button>
-              <button *ngIf="btn_load" class="btn btn-primary" type="button" disabled>
-                <span class="spinner-border spinner-border-sm btn btn-sm btn-dark w-100" role="status" aria-hidden="true"></span>
+              <button *ngIf="!btn_load" type="submit" class="btn btn-sm btn-dark w-100" (click)="validate()">Registrarse</button>
+              <button *ngIf="btn_load" class="btn btn-dark w-100" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 Procesando...
               </button>
             </form>
