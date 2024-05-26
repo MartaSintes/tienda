@@ -1,49 +1,48 @@
 <app-topbar></app-topbar>
 <section class="pt-7 pb-12">
   <h1 class="text-center mb-5">Nuestros Productos</h1>
+  
   <ng-container *ngIf="load_producto">
-          <div class="text-center py-10">
-            <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
-          </div>
+    <div class="text-center py-10">
+      <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
   </ng-container>
+  
   <ng-container *ngIf="!load_producto">
     <div class="container my-5">
       <div class="row">
-        <div class="col-md-3 product-card" *ngFor="let item of productos| slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-         
-         <div class="card">
-           <a [routerLink]="['/',item.slug]" >
-            <img [src]="url+'/getImgProductos/'+item.portada" class="card-img-top" alt="Producto 1">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4" *ngFor="let item of productos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+          <div class="card h-100">
+            <a [routerLink]="['/',item.slug]">
+              <img [src]="url+'/getImgProductos/'+item.portada" class="card-img-top" alt="Producto 1">
             </a>
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">{{item.titulo}}</h5>
-              <p class="card-text"><strong>{{item.precio}}€</strong></p>
+              <p class="card-text mt-auto"><strong>{{item.precio}}€</strong></p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12">
-
-        <!-- Progress -->
-        <div class="row justify-content-center mt-7">
-          <ngb-pagination
-                [collectionSize]="productos.length"
-                [(page)]="page"
-                [pageSize]="pageSize"
-                [maxSize]="5"
-                [rotate]="true"
-                [ellipses]="false"
-                [boundaryLinks]="true"
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="row justify-content-center mt-7">
+            <ngb-pagination
+              [collectionSize]="productos.length"
+              [(page)]="page"
+              [pageSize]="pageSize"
+              [maxSize]="5"
+              [rotate]="true"
+              [ellipses]="false"
+              [boundaryLinks]="true"
             ></ngb-pagination>
+          </div>
         </div>
-        
       </div>
     </div>
- </ng-container>  
+  </ng-container>  
 </section>
 <app-footer></app-footer>
