@@ -46,7 +46,9 @@ export class FormularioCompraComponent implements OnInit {
       producto: this.producto._id,
       direccion: this.orden.direccion,
       tarjeta: this.orden.tarjeta,
+      
     };
+    console.log(this.producto._id);
     console.log(completeOrden)
     this._ordenService.createOrden(completeOrden).subscribe(
       (response) => {
